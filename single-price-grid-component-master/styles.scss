@@ -1,0 +1,120 @@
+@import "./partials/variables";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font;
+}
+body{
+    padding: 4em 2em 4em 2em;
+    background-color: $gray;
+}
+.parent{
+    
+    .box{
+        padding: 1.5em;
+    }
+}
+.box1{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    grid-area:box1;
+    
+    h2{
+        color: $cyan;
+        padding: 15px;
+    }
+    h3{
+        color:$yellow;
+        padding: 15px;
+    }
+    h4{
+        color:$blue;
+        padding: 15px;
+        line-height: 2;
+    }
+}
+.box2{
+    grid-area:box2;
+    h2{
+        color: $gray;
+        padding: 15px;
+    }
+    .price{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 5px 15px;
+        gap: 10px;
+        color: $gray;
+        span{
+            font-size: 40px;
+            font-weight: 700;
+        }
+    }
+    p{
+        color: $gray;
+        padding: 0px 15px 30px;
+    }
+    
+    a{  
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        margin: 0 10px;
+        background-color: $yellow;
+        color: $gray;
+        text-decoration: none;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 5px 5px 5px rgba(93, 227, 53, 0.429);
+        &:hover{
+            cursor:pointer;
+            background-color: hsla(71, 73%, 54%, 0.751);
+        }
+    }
+
+}
+.box3{
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    grid-area:box3;
+    h2{
+        color:$gray;
+        padding: 15px;
+    }
+    p{
+        color:$gray;
+        padding: 0px 6em 0px 15px  ;
+        line-height: 2;
+    }
+}
+.attribution{
+    padding: 2em;
+}
+@each $key,$value in $boxColors{
+    .box#{$key}{
+        background-color: $value;
+    }}
+@media screen and (min-width: 1300px) {
+        body {
+          padding: 6.5em 20em;
+          .parent{
+            display: grid;
+            grid-template-columns: 1fr 1fr ;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: "box1 box1" "box2 box3";
+            .box2{
+                border-bottom-left-radius: 10px 
+            }
+            .box3{
+                border-bottom-left-radius: 0;
+            }
+
+          }
+          .attribution{
+            padding: 2em;
+          }
+        }
+      }

@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+$cyan:hsl(179, 62%, 43%);
+$yellow: hsl(71, 73%, 54%);
+$gray:hsl(204, 43%, 93%);
+$blue:hsl(218, 22%, 67%);
+$boxColors: (
+    1: white,
+    2: $cyan ,
+    3: hsla(179, 61%, 50%, 0.903),
+
+);
+$font: 'Karla', sans-serif;
